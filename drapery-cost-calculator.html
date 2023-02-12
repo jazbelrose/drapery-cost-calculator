@@ -9,7 +9,7 @@
   <meta name="generator" content="Hugo 0.88.1">
   <title>Drapery cost calculator</title>
 
-  <link rel="canonical" href="https://drapery-cost-calculator.cyclic.app/">
+  <link rel="canonical" href="drapery-cost-calculator/">
 
 
 
@@ -89,8 +89,7 @@
 
 
 
-      <input type="submit" class="w-100 btn btn-lg btn-primary" value="Calculate Cost"
-        onclick="calculateCost(); return false;">
+      <input type="submit" class="w-100 btn btn-lg btn-primary" value="Calculate Cost">
     </form>
 
     </div>
@@ -131,35 +130,7 @@
   </main>
 
   <script>
-    $('#calculate-cost').click(function(event) {
-      event.preventDefault();
-      let perimeter = $('#perimeter').val();
-      let height = $('#height').val();
-      let fabricType = $('#fabricType').val();
-      let fullnessPercentage = $('#fullnessPercentage').val();
-      $.ajax({
-        url: '/calculate-cost',
-        method: 'POST',
-        data: {
-          perimeter: perimeter,
-          height: height,
-          fabricType: fabricType,
-          fullnessPercentage: fullnessPercentage
-        },
-        success: function(response) {
-          $('#fabricNeededYrds').text(response.fabricNeededYrds);
-          $('#pricePerPanel').text(response.pricePerPanel);
-          $('#fabricCost').text(response.fabricCost);
-          $('#sewingCost').text(response.sewingCost);
-          $('#equipmentCost').text(response.equipmentCost);
-          $('#laborCost').text(response.laborCost);
-          $('#cost').text(response.totalCost.toFixed(2));
-        },
-        error: function() {
-          console.log('Error calculating cost');
-        }
-      });
-    });
+    
   </script>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

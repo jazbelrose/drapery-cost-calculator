@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
 
 
 
-app.post('/calculate', (req, res) => {
+app.post('/calculate', (req, res) =>{
   const { perimeter, height, fabricType, fullnessPercentage } = req.body;
 
   let cost = 0;
@@ -85,20 +85,23 @@ app.post('/calculate', (req, res) => {
     laborCost += initialLaborCost;
   }
 
+
   cost += laborCost + equipmentCost + sewingCost;
+console.log(cost);
 
-  const result = {
-    fabricNeededYrds: Math.round(fabricNeededYrds),
-    pricePerPanel: Math.round(pricePerPanel),
-    cost: Math.round(cost).toFixed(2),
-    fabricCost: Math.round(fabricCost).toFixed(2),
-    sewingCost: Math.round(sewingCost).toFixed(2),
-    equipmentCost: Math.round(equipmentCost).toFixed(2),
-    laborCost: Math.round(laborCost).toFixed(2),
-  };
 
-  res.json(result);
+res.send({
+  fabricNeededYrds: Math.round(fabricNeededYrds),
+  pricePerPanel: Math.round(pricePerPanel),
+  cost: Math.round(cost).toFixed(2),
+  fabricCost: Math.round(fabricCost).toFixed(2),
+  sewingCost: Math.round(sewingCost).toFixed(2),
+  equipmentCost: Math.round(equipmentCost).toFixed(2),
+  laborCost: Math.round(laborCost).toFixed(2)
 });
+});
+
+
 
 app.listen(3000, () => {
   console.log('Server listening on port 3000');
