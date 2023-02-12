@@ -1,7 +1,6 @@
 
 
 
-
 $('form').submit(function(e) {
     e.preventDefault();
     const perimeter = $('#perimeter').val();
@@ -60,3 +59,9 @@ $(function() {
     });
   });
   
+  const submitButton = document.querySelector('button[type="submit"]');
+
+submitButton.addEventListener('touchend', function(e) {
+  e.preventDefault();
+});
+

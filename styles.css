@@ -51,8 +51,7 @@ body {
 
 .btn-primary:active {
     background-color: white !important;
-    transform: translateY(1px);
-    box-shadow: none;
+    
 }
 
 .highlight {
@@ -107,4 +106,19 @@ body {
   bottom: 0;
   width: 100%;
   padding-top: 50%;
+}
+@media (hover: hover) {
+  /* Styles for devices that support hover */
+  .btn:hover {
+    /* Add your hover styles here */
+  }
+}
+
+@media (hover: none) {
+  /* Styles for devices that don't support hover */
+  .btn:hover {
+    background-color: black;
+    color: #fff;
+    cursor: pointer;
+  }
 }

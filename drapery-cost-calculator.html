@@ -81,7 +81,7 @@
 
       <div class="form-group">
         <select id="fullnessPercentage" class="form-control">
-          <option value="" disabled selected>Select the fullness percentage</option>
+          <option value="" disabled selected>Select the fullness percentage (leave empty if 0)</option>
           <option value=50>50%</option>
           <option value=100>100%</option>
         </select>
@@ -89,7 +89,8 @@
 
 
 
-      <input type="submit" class="w-100 btn btn-lg btn-primary" value="Calculate Cost">
+      <input type="submit" class="w-100 btn btn-lg btn-primary" value="Calculate Cost" ontouchend="">
+
     </form>
 
     </div>
@@ -106,7 +107,7 @@
       <div id="fabricNeededYrdsContainer">
         Fabric Needed (in Yrds): <span id="fabricNeededYrds" class="highlight sub-highlight">0</span>
       </div>
-      
+
       <div id="pricePerPanelContainer">
         Price per panel: $<span id="pricePerPanel" class="highlight sub-highlight">0</span>
       </div>
@@ -130,7 +131,6 @@
   </main>
 
   <script>
-    
   </script>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
