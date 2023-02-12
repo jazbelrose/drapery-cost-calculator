@@ -51,6 +51,8 @@ body {
 
 .btn-primary:active {
     background-color: white !important;
+    transform: translateY(1px);
+    box-shadow: none;
 }
 
 .highlight {
